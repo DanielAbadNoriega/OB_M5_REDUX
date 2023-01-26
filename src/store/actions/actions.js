@@ -8,7 +8,7 @@ export const SET_VISIBILITY_FILTER = "SET_VISIBILITY_FILTER";
 /**
  *
  * @param {string} text
- * @returns actino ADD_TODO
+ * @returns action ADD_TODO
  */
 export const addTodo = (text) => {
   return {
