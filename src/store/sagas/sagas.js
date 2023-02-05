@@ -25,7 +25,7 @@ export function* workerSaga(action) {
     });
   } catch (error) {
     yield put({
-      type: action.payload.failAction, // API_CALL_FAILURE
+      type: action.payload.failureAction, // API_CALL_FAILURE
       payload: {
         error: error,
       },

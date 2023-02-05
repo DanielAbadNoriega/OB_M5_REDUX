@@ -8,35 +8,39 @@ export const login = (email, password) => {
     type: API_CALL_REQUEST,
     // the payload here, contains axios request configuration
     payload: {
-      method: "POST",
-      url: "https://reqres.in/api/login",
-      data: {
-        email,
-        password
+      request: {
+        method: "POST",
+        url: "https://reqres.in/api/login",
+        data: {
+          email,
+          password,
+        },
       },
       okAction: API_CALL_SUCCESS,
-      failureAction: API_CALL_FAILURE
-    }
-  }
-}
+      failureAction: API_CALL_FAILURE,
+    },
+  };
+};
 
 /**
  * Generic HttpRequest Action dispatcher
- * @param {string} method 
- * @param {string} url 
- * @param {object} data 
- * @returns 
+ * @param {string} method
+ * @param {string} url
+ * @param {object} data
+ * @returns
  */
 export const httpRequest = (method, url, data) => {
   return {
     type: API_CALL_REQUEST,
     // the payload here, contains axios request configuration
     payload: {
-      method,
-      url,
-      data,
+      request: {
+        method,
+        url,
+        data,
+      },
       okAction: API_CALL_SUCCESS,
-      failureAction: API_CALL_FAILURE
-    }
-  }
-}
+      failureAction: API_CALL_FAILURE,
+    },
+  };
+};
