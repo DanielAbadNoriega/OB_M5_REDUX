@@ -2,14 +2,22 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Filter = ({ active, onClick, children }) => {
+  console.log("[ Filter ] Active: " + active + ", Children: " + children);
   if (active) {
     return <span className="active">{children}</span>;
   }
 
-  return <button className="filter" onClick={(e) => {
-    e.preventDefault();
-    onClick();
-  } }>{children}</button>;
+  return (
+    <button
+      className="filter"
+      onClick={(e) => {
+        e.preventDefault();
+        onClick();
+      }}
+    >
+      {children}
+    </button>
+  );
 };
 
 Filter.propTypes = {
