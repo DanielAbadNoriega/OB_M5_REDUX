@@ -5,6 +5,7 @@ import LoginForm from "../pure/LoginForm";
 const mapStateToProps = (state) => {
   return {
     loged: state.userState.loged,
+    fetching: state.userState.fetching
   };
 };
 

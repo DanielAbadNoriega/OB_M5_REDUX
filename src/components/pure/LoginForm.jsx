@@ -15,7 +15,7 @@ const loginSchema = Yup.object().shape({
   password: Yup.string().required("Password is required"),
 });
 
-const LoginForm = ({ loged, onLogin }) => {
+const LoginForm = ({ loged, fetching, onLogin }) => {
   const initialCredentials = {
     email: "",
     password: "",
@@ -111,6 +111,7 @@ const LoginForm = ({ loged, onLogin }) => {
           >
             Login
           </button>
+          { fetching ? (<p>LOADING...</p>) : null }
           {isSubmitting ? <p>Login your credentials...</p> : null}
         </Form>
       )}
@@ -120,6 +121,7 @@ const LoginForm = ({ loged, onLogin }) => {
 
 LoginForm.propTypes = {
   loged: PropTypes.bool.isRequired,
+  fetching: PropTypes.bool.isRequired,
   onLogin: PropTypes.func.isRequired
 };
 
